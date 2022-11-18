@@ -4,7 +4,10 @@ var router = express.Router();
 // Controllers
 const UrlController = require('../controllers/urls');
 
-router.post('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
+
+  console.log(req.body)
+  
   UrlController.addUrl(req.body)
   .then((result) => res.status(201).json(result))
   .catch((e) => console.log(res, e));

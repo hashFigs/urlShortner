@@ -12,8 +12,9 @@ static async getUrl(urlId) {
   }
 
 static async addUrl(formData) {
-    console.log(formData)
-    const url = new Url(formData);
+    console.log('body', formData)
+    const url = new Url();
+          url.originalUrl = formData.url;
     await url.save();
     
     return (url);
