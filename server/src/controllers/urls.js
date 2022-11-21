@@ -24,12 +24,13 @@ static async convertUrl(formData) {
     //store original url, shortUrl
     const url = new Url();
           url.originalUrl = formData.url;
-          url.shortUrl = `${base}/${urlId}`;
+          url.shortUrl = `${urlId}`;
     await url.save();
     
     return (url);
 }  
 
+/*
 static async addUrl(formData) {
     const url = new Url();
           url.originalUrl = formData.url;
@@ -37,7 +38,7 @@ static async addUrl(formData) {
     
     return (url);
 }  
-
+*/
 static async getUrls() {
     const urls = await Url.find({})
     
